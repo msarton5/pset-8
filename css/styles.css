@@ -1,4 +1,4 @@
-/* body {
+body {
   text-align: center;
   font-family: "Roboto", monospace;
 }
@@ -16,7 +16,7 @@ h2 {
   margin: 2%;
 }
 
-.container {
+/* .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,4 +63,4 @@ h2 {
   background-color: black;
   color: white;
   cursor: pointer;
-} */
+} */ */
