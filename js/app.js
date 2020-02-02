@@ -22,6 +22,7 @@ const message = document.querySelector("h2");
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
+document.getElementById("reset-button").onclick = init;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
@@ -38,10 +39,11 @@ function init() {
 
 function render() {
   board.forEach(function(mark, index) {
-    squares[index].textContent = mark;    // writes an X or an O on board
+    squares[index].textContent = mark;
   });
 
-  message.textContent = `Turn: ${turn}`;
+  message.textContent =
+    win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
 }
 
 function takeTurn(e) {
@@ -52,24 +54,6 @@ function takeTurn(e) {
   turn = turn === "X" ? "O" : "X";
 
   render();
-}
-
-if (board[0] && board[0] === board[1] && board[1] === board[2]) {
-  win = board[0];
-} else if (board[3] && board[3] === board[4] && board[4] === board[5]) {
-  win = board[0];
-} else if (board[6] && board[6] === board[7] && board[7] === board[8]) {
-  win = board[0];
-} else if (board[0] && board[0] === board[3] && board[3] === board[6]) {
-  win = board[0];
-} else if (board[1] && board[1] === board[4] && board[4] === board[7]) {
-  win = board[0];
-} else if (board[2] && board[2] === board[5] && board[5] === board[8]) {
-  win = board[0];
-} else if (board[0] && board[0] === board[4] && board[4] === board[8]) {
-  win = board[0];
-} else if (board[2] && board[2] === board[4] && board[4] === board[6]) {
-  win = board[0];
 }
 
 function getWinner() {
@@ -86,4 +70,36 @@ function getWinner() {
   });
 
   return winner;
+}
+
+function takeTurn(e) {
+  if (!win) {
+    let index = squares.findIndex(function(square) {
+      return square === e.target;
+    });
+
+    if (board[index] === "") {
+      board[index] = turn;
+      turn = turn === "X" ? "O" : "X";
+      win = getWinner();
+
+      render();
+    }
+  }
+}
+
+function getWinner() {
+  let winner = null;
+
+  winningConditions.forEach(function(condition, index) {
+    if (
+      board[condition[0]] &&
+      board[condition[0]] === board[condition[1]] &&
+      board[condition[1]] === board[condition[2]]
+    ) {
+      winner = board[condition[0]];
+    }
+  });
+
+  return winner ? winner : board.includes("") ? null : "T";
 }
