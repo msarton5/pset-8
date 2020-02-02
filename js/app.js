@@ -10,11 +10,11 @@ const winningConditions = [
   [2, 4, 6]
 ];
 
-// ///////////////////// APP STATE (VARIABLES) /////////////////////////
-// let board;
-// let turn;
-// let win;
-//
+///////////////////// APP STATE (VARIABLES) /////////////////////////
+let board;
+let turn;
+let win;
+
 // ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 // const squares = Array.from(document.querySelectorAll("#board div"));
 // const message = document.querySelector("h2");
