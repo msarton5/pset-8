@@ -54,36 +54,36 @@ function takeTurn(e) {
   render();
 }
 
-// if (board[0] && board[0] === board[1] && board[1] === board[2]) {
-//   win = board[0];
-// } else if (board[3] && board[3] === board[4] && board[4] === board[5]) {
-//   win = board[0];
-// } else if (board[6] && board[6] === board[7] && board[7] === board[8]) {
-//   win = board[0];
-// } else if (board[0] && board[0] === board[3] && board[3] === board[6]) {
-//   win = board[0];
-// } else if (board[1] && board[1] === board[4] && board[4] === board[7]) {
-//   win = board[0];
-// } else if (board[2] && board[2] === board[5] && board[5] === board[8]) {
-//   win = board[0];
-// } else if (board[0] && board[0] === board[4] && board[4] === board[8]) {
-//   win = board[0];
-// } else if (board[2] && board[2] === board[4] && board[4] === board[6]) {
-//   win = board[0];
-// }
+if (board[0] && board[0] === board[1] && board[1] === board[2]) {
+  win = board[0];
+} else if (board[3] && board[3] === board[4] && board[4] === board[5]) {
+  win = board[0];
+} else if (board[6] && board[6] === board[7] && board[7] === board[8]) {
+  win = board[0];
+} else if (board[0] && board[0] === board[3] && board[3] === board[6]) {
+  win = board[0];
+} else if (board[1] && board[1] === board[4] && board[4] === board[7]) {
+  win = board[0];
+} else if (board[2] && board[2] === board[5] && board[5] === board[8]) {
+  win = board[0];
+} else if (board[0] && board[0] === board[4] && board[4] === board[8]) {
+  win = board[0];
+} else if (board[2] && board[2] === board[4] && board[4] === board[6]) {
+  win = board[0];
+}
 
-// function getWinner() {
-//   let winner = null;
-//
-//   winningConditions.forEach(function(condition, index) {
-//     if (
-//       board[condition[0]] &&
-//       board[condition[0]] === board[condition[1]] &&
-//       board[conition[1]] === board[condition[2]]
-//     ) {
-//       winner = board[condition[0]];
-//     }
-//   });
-//
-//   return winner;
-// }
+function getWinner() {
+  let winner = null;
+
+  winningConditions.forEach(function(condition, index) {
+    if (
+      board[condition[0]] &&
+      board[condition[0]] === board[condition[1]] &&
+      board[conition[1]] === board[condition[2]]
+    ) {
+      winner = board[condition[0]];
+    }
+  });
+
+  return winner;
+}
