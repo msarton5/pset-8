@@ -120,10 +120,12 @@ function firstTurn() {
 
     switch (first) {
       case x:
-        turn = "X";
+        message.textContent =
+          whoIsFirst === "Turn: X";
         break;
       case o:
-        turn = "O";
+        message.textContent =
+          whoIsFirst === "Turn: O";
         break;
       default:
         alert("Type in X or O to decide who goes first!");
