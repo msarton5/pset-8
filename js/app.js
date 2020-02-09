@@ -127,5 +127,6 @@ function firstTurn() {
         break;
       default:
         alert("Type in X or O to decide who goes first!");
+        break;
     }
 }
