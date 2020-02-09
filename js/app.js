@@ -106,6 +106,26 @@ function getWinner() {
 
 function keepScore() {
   if (win === !"T") {
+    if (win === "X") {
+      const countx = document.getElementById("x-score");
 
+    }
   }
+}
+
+function firstTurn() {
+    const whoIsFirst = document.getElementById("whosFirst");
+
+    var first = whoIsFirst.toLowerCase();
+
+    switch (first) {
+      case x:
+        turn = "X";
+        break;
+      case o:
+        turn = "O";
+        break;
+      default:
+        alert("Type in X or O to decide who goes first!");
+    }
 }
