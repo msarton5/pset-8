@@ -117,10 +117,8 @@ function getWinner() {
 }
 
 function keepScore(win) {
-  console.log("hi");
   if (win !== null) {
     if (win === "X") {
-      console.log("bye");
       xscore++;
       x.textContent = "X: " + xscore;
 
