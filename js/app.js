@@ -15,13 +15,13 @@ let board;
 let turn;
 let win;
 let xscore;
-let yscore;
+let oscore;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
-document.getElementById("x-score").onclick = x
-document.getElementById("y-score").onclick = y
+const x = document.getElementById("x-score");
+const o = document.getElementById("o-score");
 
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
@@ -111,9 +111,11 @@ function getWinner() {
 function keepScore() {
   if (getWinner()) {
     if (turn === "X") {
+      x.textvalue = "X: " + xscore;
       xscore++;
-    } else if (turn === "O"){
-      yscore++;
+    } else if (turn === "O") {
+      o.textvalue = "O: " + yscore;
+      oscore++;
     }
   }
 }
