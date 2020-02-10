@@ -12,7 +12,7 @@ const winningConditions = [
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
-let turn;
+let turn = "X";
 let win;
 let xscore = 0;
 let oscore = 0;
@@ -27,6 +27,8 @@ const o = document.getElementById("o-score");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
+document.getElementById("x-button").onclick = xFirst;
+document.getElementById("o-button").onclick = oFirst;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
@@ -39,6 +41,8 @@ function init() {
   win = null;
 
   render();
+  document.getElementById("x-button").style.visibility = "visible";
+  document.getElementById("o-button").style.visibility = "visible";
 }
 
 function render() {
@@ -128,10 +132,16 @@ function keepScore(win) {
   }
 }
 
-function firstTurn() {
-    const xFirst = document.getElementById("x-button");
-    const oFirst = document.getElementById("x-button");
+function xFirst() {
+    turn = "X";
+    document.getElementById("x-button").style.visibility = "invisible";
+    document.getElementById("o-button").style.visibility = "invisible";
+    render();
+}
 
-    if () {
-    }
+function oFirst() {
+  turn = "O";
+  document.getElementById("x-button").style.visibility = "invisible";
+  document.getElementById("o-button").style.visibility = "invisible";
+  render();
 }

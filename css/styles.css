@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  background: #639E8A;
+
   font-family: "Roboto", monospace;
 }
 
@@ -8,12 +10,14 @@ h1 {
   font-family: "Major Mono Display", monospace;
   font-size: 48px;
   margin: 2%;
+    text-decoration-color: orange;
 }
 
 h2 {
   font-size: 36px;
   font-weight: lighter;
   margin: 2%;
+    text-decoration-color: orange;
 }
 
 .container {
@@ -44,7 +48,7 @@ h2 {
 }
 
 .square:hover {
-  background-color: lightgray;
+  background-color: orange;
   cursor: pointer;
 }
 
@@ -63,4 +67,13 @@ h2 {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+.text-and-buttons {
+  float: left;
+  width: 15%
+}
+
+#container-wrap {
+  margin-left: 15%;
 }
