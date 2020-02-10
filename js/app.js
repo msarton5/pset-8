@@ -20,6 +20,8 @@ let yscore;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
+document.getElementById("x-score");
+document.getElementById("y-score");
 
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
