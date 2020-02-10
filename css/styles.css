@@ -48,7 +48,7 @@ h2 {
 }
 
 .square:hover {
-  background-color: orange;
+  background-image: url("..images/him.png");
   cursor: pointer;
 }
 
