@@ -102,8 +102,16 @@ function getWinner() {
       board[condition[1]] === board[condition[2]]
     ) {
       winner = board[condition[0]];
+      if (turn === "X") {
+        x.textvalue = "X: " + xscore;
+        xscore++;
+      } else if (turn === "O") {
+        o.textvalue = "O: " + yscore;
+        oscore++;
+      }
     }
-  });
+  }
+});
 
   return winner ? winner : board.includes("") ? null : "T";
 }
