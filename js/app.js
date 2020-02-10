@@ -90,6 +90,8 @@ function takeTurn(e) {
       render();
     }
   }
+  win = getWinner();
+  keepScore(win);
 }
 
 function getWinner() {
@@ -102,13 +104,7 @@ function getWinner() {
       board[condition[1]] === board[condition[2]]
     ) {
       winner = board[condition[0]];
-      if (turn === "X") {
-        xscore++;
-        x.textvalue = "X: " + xscore;
-      } else if (turn === "O") {
-        oscore++;
-        o.textvalue = "O: " + oscore;
-      }
+
     }
   }
 );
@@ -116,34 +112,26 @@ function getWinner() {
   return winner ? winner : board.includes("") ? null : "T";
 }
 
-function keepScore() {
-  if (getWinner()) {
-    if (turn === "X") {
-      x.textvalue = "X: " + xscore;
+function keepScore(win) {
+  console.log("hi");
+  if (win !== null) {
+    if (win === "X") {
+      console.log("bye");
       xscore++;
-    } else if (turn === "O") {
-      o.textvalue = "O: " + oscore;
-      oscore++;
+      x.textContent = "X: " + xscore;
+
+    } else if (win === "O") {
+        oscore++;
+      o.textContent = "O: " + oscore;
+
     }
   }
 }
 
 function firstTurn() {
-    const whoIsFirst = document.getElementById("whosFirst");
+    const xFirst = document.getElementById("x-button");
+    const oFirst = document.getElementById("x-button");
 
-    var first = whoIsFirst.toLowerCase();
-
-    switch (first) {
-      case x:
-        message.textContent =
-          whoIsFirst === "Turn: X";
-        break;
-      case o:
-        message.textContent =
-          whoIsFirst === "Turn: O";
-        break;
-      default:
-        alert("Type in X or O to decide who goes first!");
-        break;
+    if () {
     }
 }
