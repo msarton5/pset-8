@@ -48,7 +48,8 @@ h2 {
 }
 
 .square:hover {
-  background-image: url("..images/him.png");
+  background-image: url("~/Desktop/APCSP/pset-8/images/him.png");
+  background-color: yellow;
   cursor: pointer;
 }
 
