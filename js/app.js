@@ -14,6 +14,8 @@ const winningConditions = [
 let board;
 let turn;
 let win;
+let xscore;
+let yscore;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
@@ -105,10 +107,11 @@ function getWinner() {
 }
 
 function keepScore() {
-  if (win === !"T") {
-    if (win === "X") {
-      const countx = document.getElementById("x-score");
-
+  if (getWinner()) {
+    if (turn === "X") {
+      xscore++;
+    } else if (turn === "O"){
+      yscore++;
     }
   }
 }
