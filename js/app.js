@@ -14,8 +14,8 @@ const winningConditions = [
 let board;
 let turn;
 let win;
-let xscore;
-let oscore;
+let xscore = 0;
+let oscore = 0;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
@@ -103,15 +103,15 @@ function getWinner() {
     ) {
       winner = board[condition[0]];
       if (turn === "X") {
-        x.textvalue = "X: " + xscore;
         xscore++;
+        x.textvalue = "X: " + xscore;
       } else if (turn === "O") {
-        o.textvalue = "O: " + yscore;
         oscore++;
+        o.textvalue = "O: " + oscore;
       }
     }
   }
-});
+);
 
   return winner ? winner : board.includes("") ? null : "T";
 }
@@ -122,7 +122,7 @@ function keepScore() {
       x.textvalue = "X: " + xscore;
       xscore++;
     } else if (turn === "O") {
-      o.textvalue = "O: " + yscore;
+      o.textvalue = "O: " + oscore;
       oscore++;
     }
   }
